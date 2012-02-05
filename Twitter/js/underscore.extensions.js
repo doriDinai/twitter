@@ -1,7 +1,7 @@
 ﻿(function () {
 	this.mixin({
 		classify: function (str) {
-			var s = this.trim(str).replace(/(\-|_|\s)+(.)?/g, function (match, separator, chr) {
+			var s = this.string.trim(str).replace(/(\-|_|\s)+(.)?/g, function (match, separator, chr) {
 				return chr ? chr.toUpperCase() : '';
 			});
 			return s.charAt(0).toUpperCase() + s.substring(1);
