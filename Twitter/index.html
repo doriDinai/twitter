@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/jquery.tmpl.min.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/underscore.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/underscore.string.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/underscore.extensions.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/backbone-min.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/twitter.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/application.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/twitter.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/routes.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/models/tweet.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/models/tweets.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/views/tweets/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/Twitter/js/controllers/Tweets_controller.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+	<div id="app">
+	test
+
+
+	hey - check if you're getting a cross-domain scripting error - since the page is loading from a server it can't make the ajax request to another domain, twitter. so the request to twitter is probably failing silently.  there are two ways around this, jsonp (which I've never actually had to use, not sure how that would work with backbone either), and the other way is to load index.html and other files from the file system, when it's done that way there are no restrictions and you can make ajax requests to anywhere.
+	</div>
+	<script id="tweets/index" type="text/x-jquery-tmpl">
+	    <header class="navigation_bar"></header>
+		<section>
+		  <ul class="users scrollable vertical">
+			{{tmpl(tweets) "tweets/_tweet"}}
+		  </ul>
+		</section>
+	</script>
+	<script id="tweets/_tweet" type="text/x-jquery-tmpl">
+	    <li>${Name}</li>
+	</script>
+</body>
+</html>

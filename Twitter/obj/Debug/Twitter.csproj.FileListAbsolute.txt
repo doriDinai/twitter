@@ -1,0 +1,5 @@
+C:\inetpub\wwwroot\Twitter\bin\Twitter.dll
+C:\inetpub\wwwroot\Twitter\bin\Twitter.pdb
+C:\inetpub\wwwroot\Twitter\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Twitter\obj\Debug\Twitter.dll
+C:\inetpub\wwwroot\Twitter\obj\Debug\Twitter.pdb
