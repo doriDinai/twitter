@@ -21,9 +21,6 @@
 <body>
 	<div id="app">
 	test
-
-
-	hey - check if you're getting a cross-domain scripting error - since the page is loading from a server it can't make the ajax request to another domain, twitter. so the request to twitter is probably failing silently.  there are two ways around this, jsonp (which I've never actually had to use, not sure how that would work with backbone either), and the other way is to load index.html and other files from the file system, when it's done that way there are no restrictions and you can make ajax requests to anywhere.
 	</div>
 	<script id="tweets/index" type="text/x-jquery-tmpl">
 	    <header class="navigation_bar"></header>

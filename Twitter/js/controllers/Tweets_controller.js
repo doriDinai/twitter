@@ -3,7 +3,6 @@
 		var self = {};
 
 		self.index = function () {
-			alert("index");
 			var tweets = new twitter.Tweets();
 			var view = new twitter.views.tweets.Index({
 				collection: tweets
