@@ -42,8 +42,10 @@
 		});
 
 		self.ready = function () {
+			Backbone.useJSONP = true;
 			routes = new twitter.Router();
 			$.preloadCssImages();
+			$el = $("#app");
 			Backbone.history.start();
 		};
 

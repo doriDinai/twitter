@@ -9,29 +9,45 @@
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/underscore.extensions.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/backbone.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/twitter.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/application.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/Application.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/twitter.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/routes.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/tweet.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/tweets.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/Router.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweet.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweets.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Search.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/index.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/controllers/Tweets_controller.js" type="text/javascript"></script>
-    <title></title>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/search/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/controllers/TweetsController.js" type="text/javascript"></script>
+	<title></title>
 </head>
 <body>
 	<div id="app">
-	test
 	</div>
-	<script id="tweets/index" type="text/x-jquery-tmpl">
-	    <header class="navigation_bar"></header>
+	<script id="tmpl-search" type="text/x-jquery-tmpl">
 		<section>
-		  <ul class="users scrollable vertical">
-			{{tmpl(tweets) "tweets/_tweet"}}
+			<div id="searchDIV">
+				Search twitter for: <input type="text" id="searchQuery" value="${query}" />
+				<button id="searchBtn">Search!</button>
+			</div>
+		</section>
+	</script>
+	<script id="tmpl-tweets-index" type="text/x-jquery-tmpl">
+		<section>
+		  <ul>
+			{{tmpl "#tmpl-tweets-tweet"}}
 		  </ul>
 		</section>
 	</script>
-	<script id="tweets/_tweet" type="text/x-jquery-tmpl">
-	    <li>${Name}</li>
+	<script id="tmpl-tweets-tweet" type="text/x-jquery-tmpl">
+	    <li>
+			<div>
+				<img src="${profile_image_url}" />${from_user}:
+			</div>
+			<div>
+				${text}
+			</div>
+			<div><button class="detailsBtn" id="detailsBtn${id_str}">Details</button></div>
+		</li>
 	</script>
 </body>
 </html>
