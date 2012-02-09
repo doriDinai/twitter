@@ -9,7 +9,7 @@
 					return {
 						'': 'tweets#index',
 						'!/tweets': 'tweets#index',
-						'!/tweet': 'tweets#show',
+						'!/tweet/:id': 'tweets#show',
 						'!/splash': 'splashes#show',
 						'!/users': 'users#index',
 						'!/users/new': 'users#new',

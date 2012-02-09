@@ -4,6 +4,7 @@
 		var self = {};
 		var $el = options.el ? $(options.el) : $('#app');
 		var $popup = options.popup ? $(options.popup) : $('#popup');
+		var tweets = [];
 		var routes;
 
 		Object.defineProperties(self, {
@@ -37,6 +38,14 @@
 				},
 				set: function ($element) {
 					$popup = $element;
+				}
+			},
+			tweets: {
+				get: function () {
+					return tweets;
+				},
+				set: function (collection) {
+					tweets = collection;
 				}
 			}
 		});

@@ -15,8 +15,9 @@
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweet.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweets.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Search.js" type="text/javascript"></script>
-	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/index.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/search/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/show.js" type="text/javascript"></script>
 	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/controllers/TweetsController.js" type="text/javascript"></script>
 	<title></title>
 </head>
@@ -46,8 +47,19 @@
 			<div>
 				${text}
 			</div>
-			<div><button class="detailsBtn" id="detailsBtn${id_str}">Details</button></div>
+			<div><a class="detailsA" id="detailsA${id_str}" href="#!/tweet/${id_str}">Details</a></div>
 		</li>
+	</script>
+	<script id="tmpl-tweets-show" type="text/x-jquery-tmpl">
+		<div>
+			<a href="javascript:history.back()">back to results</a>
+		</div>
+		<div>
+			<img src="${profile_image_url}" />${from_user}:
+		</div>
+		<div>
+			${text}
+		</div>
 	</script>
 </body>
 </html>

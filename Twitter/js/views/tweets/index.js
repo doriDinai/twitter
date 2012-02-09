@@ -18,9 +18,9 @@
 
 			self.$el.empty();
 			$tmplTweetsIndex.tmpl(tweets.toJSON()).appendTo(self.$el);
-			$(".detailsBtn").bind('click', function (event) {
-				alert(event.target.id.replace("detailsBtn", ""));
-			});
+//			$(".detailsBtn").bind('click', function (event) {
+//				alert(event.target.id.replace("detailsBtn", ""));
+//			});
 		}
 
 

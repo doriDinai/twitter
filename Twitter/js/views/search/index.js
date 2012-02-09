@@ -29,6 +29,11 @@
 			$searchQuery.bind('keyup', function (event) {
 				search.query = event.target.value;
 			});
+			$searchQuery.bind('keydown', function (event) {
+				if ((event.keyCode || event.which) == 13) {
+					self.$searchBtn.click();
+				}
+			});
 			self.$searchBtn = $("#searchBtn");
 
 			return self;
