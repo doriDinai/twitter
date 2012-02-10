@@ -27,7 +27,7 @@
 			$tmplSearch.tmpl(search.toJSON()).appendTo(self.$el);
 			$searchQuery = $("#searchQuery");
 			$searchQuery.bind('keyup', function (event) {
-				search.query = event.target.value;
+				search.set("query", event.target.value);
 			});
 			$searchQuery.bind('keydown', function (event) {
 				if ((event.keyCode || event.which) == 13) {

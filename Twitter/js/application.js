@@ -4,7 +4,8 @@
 		var self = {};
 		var $el = options.el ? $(options.el) : $('#app');
 		var $popup = options.popup ? $(options.popup) : $('#popup');
-		var tweets = [];
+		var search = null;
+		var tweets = null;
 		var routes;
 
 		Object.defineProperties(self, {
@@ -38,6 +39,14 @@
 				},
 				set: function ($element) {
 					$popup = $element;
+				}
+			},
+			search: {
+				get: function () {
+					return search;
+				},
+				set: function (model) {
+					search = model;
 				}
 			},
 			tweets: {

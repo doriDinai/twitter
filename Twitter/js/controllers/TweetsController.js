@@ -3,23 +3,15 @@
 		var self = {};
 
 		self.index = function () {
-			var search = new Search();
+			if (twitter.application.search == null) {
+				twitter.application.search = new Search();
+			}
+			var search = twitter.application.search;
 			var searchView = new twitter.views.search.Index({
 				model: search
 			});
 
-			twitter.application.tweets = new twitter.Tweets();
-			var tweets = twitter.application.tweets;
-			var tweetsView = new twitter.views.tweets.Index({
-				collection: tweets
-			});
-
-			var makeQuery = function () {
-				tweets.query = search.query;
-				tweetsView.render();
-			}
-
-			// Setting search view
+			// Setting up the search
 			twitter.application.$el.empty();
 			twitter.application.$el.append(searchView.$el);
 			searchView.render();
@@ -27,8 +19,24 @@
 				makeQuery();
 			});
 
-			// Setting tweets view
+			// Setting up the tweets
+			if (twitter.application.tweets == null) {
+				twitter.application.tweets = new twitter.Tweets();
+			}
+			var tweets = twitter.application.tweets;
+			var tweetsView = new twitter.views.tweets.Index({
+				collection: tweets
+			});
+
 			twitter.application.$el.append(tweetsView.$el);
+			if (tweets.models) {
+				tweetsView.populate();
+			}
+
+			var makeQuery = function () {
+				tweets.query = search.get('query');
+				tweetsView.render();
+			}
 		};
 
 		self.show = function (id) {

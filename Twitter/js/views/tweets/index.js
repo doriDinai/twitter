@@ -23,6 +23,7 @@
 //			});
 		}
 
+		self.populate = refresh;
 
 		self.render = function () {
 			tweets.bind('reset', refresh);
