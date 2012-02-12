@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Jasmine Spec Runner</title>
+	<link rel="shortcut icon" type="image/png" href="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/jasmine_favicon.png" />
+	<link rel="stylesheet" type="text/css" href="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/jasmine.css" />
+	
+	<!-- include source files here... -->
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jquery-1.7.1.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jquery.tmpl.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/preloadCssImages.jQuery_v5.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/underscore.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/underscore.string.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/underscore.extensions.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/backbone.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/twitter.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/Application.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/twitter.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/Router.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweet.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Tweets.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/models/Search.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/search/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/index.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/views/tweets/show.js" type="text/javascript"></script>
+	<script src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/controllers/TweetsController.js" type="text/javascript"></script>
+
+	<!-- include jasmine files here... -->
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/jasmine.js"></script>
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/jasmine-html.js"></script>
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/mock-ajax.js"></script>
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/jasmine-jquery.js"></script>
+	
+	<!-- include spec files here... -->
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/spec/TweetsSpec.js"></script>
+	<script type="text/javascript" src="file:///C:/inetpub/wwwroot/TwitterRepo/Twitter/js/jasmine-1.1.0/spec/helpers/tweetsTestResponse.js"></script>
+	
+	<script type="text/javascript">
+		(function () {
+			var jasmineEnv = jasmine.getEnv();
+			jasmineEnv.updateInterval = 1000;
+
+			var trivialReporter = new jasmine.TrivialReporter();
+
+			jasmineEnv.addReporter(trivialReporter);
+
+			jasmineEnv.specFilter = function (spec) {
+				return trivialReporter.specFilter(spec);
+			};
+
+			var currentWindowOnload = window.onload;
+
+			window.onload = function () {
+				if (currentWindowOnload) {
+					currentWindowOnload();
+				}
+				execJasmine();
+			};
+
+			function execJasmine() {
+				jasmineEnv.execute();
+			}
+
+		})();
+	</script>
+</head>
+<body>
+	<div id="app">
+	</div>
+	<script id="tmpl-search" type="text/x-jquery-tmpl">
+		<section>
+			<div id="searchDIV">
+				Search twitter for: <input type="text" id="searchQuery" value="${query}" />
+				<button id="searchBtn">Search!</button>
+			</div>
+		</section>
+	</script>
+	<script id="tmpl-tweets-index" type="text/x-jquery-tmpl">
+		<section>
+		  <ul>
+			{{tmpl "#tmpl-tweets-tweet"}}
+		  </ul>
+		</section>
+	</script>
+	<script id="tmpl-tweets-tweet" type="text/x-jquery-tmpl">
+	    <li>
+			<div>
+				<img src="${profile_image_url}" />${from_user}:
+			</div>
+			<div>
+				${text}
+			</div>
+			<div><a class="detailsA" id="detailsA${id_str}" href="#!/tweet/${id_str}">Details</a></div>
+		</li>
+	</script>
+	<script id="tmpl-tweets-show" type="text/x-jquery-tmpl">
+		<div>
+			<a href="javascript:history.back()">back to results</a>
+		</div>
+		<div>
+			<img src="${profile_image_url}" />${from_user}:
+		</div>
+		<div>
+			${text}
+		</div>
+	</script>
+</body>
+</html>

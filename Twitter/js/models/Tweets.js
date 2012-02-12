@@ -1,7 +1,7 @@
 ﻿(function () {
 	this.Tweets = function () {
 		var self = new (Backbone.Collection.extend({
-			model: TweetAlt,
+			model: twitter.Tweet,
 			url: function () {
 				return ('http://search.twitter.com/search.json?q=' + this.query + '&callback=?');
 			},

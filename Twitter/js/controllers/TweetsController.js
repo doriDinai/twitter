@@ -3,6 +3,7 @@
 		var self = {};
 
 		self.index = function () {
+			// Setting up the search
 			if (twitter.application.search == null) {
 				twitter.application.search = new Search();
 			}
@@ -11,7 +12,6 @@
 				model: search
 			});
 
-			// Setting up the search
 			twitter.application.$el.empty();
 			twitter.application.$el.append(searchView.$el);
 			searchView.render();
